@@ -1,0 +1,5 @@
+@import './vars.scss';
+
+@mixin box-shadow($x:0, $y:0,$blur:0,$offset:0) {
+    box-shadow: #{$x} #{$y} #{$blur} #{$offset} rgba($black, 0.3);
+}

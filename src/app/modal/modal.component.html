@@ -1,0 +1,104 @@
+<div *ngIf="isOpen">
+  <div class="modal-main">
+    <div class="modal-bg">
+      <div class="modal modal-bg__modal">
+        <div class="modal-wrap">
+          <div class="pictures-info modal-wrap__pictures-info">
+          <div class="pictures-info-primary pictures-info__pictures-info-primary">
+          <quill-view [content]="product.img"></quill-view>
+          </div>
+          <div class="pictures-info-secondary pictures-info__pictures-info-secondary">
+          <div class="pictures-info-secondary__first">
+          <quill-view [content]="product.img"></quill-view>
+          </div>
+          <div class="pictures-info-secondary__second">
+          <quill-view [content]="product.img"></quill-view>
+          </div >
+          <div class="pictures-info-secondary__third">
+          <quill-view [content]="product.img"></quill-view>
+          </div>
+          </div>
+          </div>
+
+          <div class="main-info modal-wrap__main-info">
+            <div class="main-info-header">
+
+            <span class="main-info-header-text">{{product.title}}</span>
+            <span class="main-info-price-text">{{product.price}} $</span>
+            <div class="main-info-header__wrap">
+            <button type="button" class="modal-btn">
+            <span
+              class="btn-text"
+              (click)="order()"
+            >Заказать</span>
+            </button>
+            <div class="balance-info modal-wrap__balance-info">
+            <div class="balance-text">
+            <span class="your-balance">Твой баланс:</span>
+            <span class="your-balance-points">2500 $</span>
+            </div>
+            <img
+            class="balance-icon"
+            src="../../assets/cart-pic.jpg"
+            alt="Balance Icon Picture"/>
+            </div>
+            </div>
+            </div>
+
+            <div class="main-info-body">
+            <div class="colors-block">
+            <p class="colors-block-text">Цвета:</p>
+            <div class="colors-toggle">
+            <input class="blue-tog" type="radio" name="color" id="blue" checked>
+            <label class="color colors-toggle-text blue-toggle-text colors-toggle__blue" for="blue">
+            Синий
+            </label>
+            <input class="beige-tog" type="radio" name="color" id="beige">
+            <label class="color colors-toggle-text blue-toggle-text colors-toggle__beige" for="beige">
+            Бежевый
+            </label>
+            <input class="grey-tog" type="radio" name="color" id="grey">
+            <label class="color colors-toggle-text blue-toggle-text colors-toggle__grey" for="grey">
+            Серый
+            </label>
+            </div>
+            </div>
+
+            <div class="sizes-block">
+            <p class="sizes-block-text">Размер:</p>
+            <div class="sizes-toggle">
+            <input type="radio" name="size" id="s" checked>
+            <label class="size size-toggle-text blue-toggle-text sizes-toggle__S" for="s">S</label>
+            <input type="radio" name="size" id="m" >
+            <label class="size size-toggle-text blue-toggle-text sizes-toggle__M" for="m">M</label>
+            <input type="radio" name="size" id="l" >
+            <label class="size size-toggle-text blue-toggle-text sizes-toggle__L" for="l">L</label>
+            </div>
+            </div>
+
+            <div class="footer-block">
+            <div class="footer-block-details">
+            <span class="footer-block-details-first">Детали:</span>
+            <span class="footer-block-details-second">{{ getText(product.info) }}
+            </span>
+            </div>
+            <div class="footer-block-additional-info">
+            <span class="footer-block-add-first">Как выбрать размер:</span>
+            <span class="footer-block-add-second">Обратитесь к администратору.</span>
+            </div>
+            </div>
+            </div>
+          </div>
+
+          <button
+            class="modal-close modal-wrap__modal-close"
+            type="image"
+            (click)="closeModal()"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal-bg" (click)="closeModal()" [class.is-hidden]="!isShowModal"></div> -->

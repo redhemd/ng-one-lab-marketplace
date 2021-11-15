@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="admin-header container__header">
+    <div routerLink="/" class="logo header__logo">
+      One Lab Marketplace
+    </div>
+
+    <!-- <form class="admin-search-bar header__search-bar">
+      <button>
+        <input type="text" autocomplete="off" placeholder="Поиск">
+      </button>
+    </form> -->
+
+    <div class="admin-navbar">
+      <ul *ngIf="authService.isAuth(); else login">
+        <li routerLinkActive="active">
+          <a [routerLink]="['/admin', 'products']">Товары</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/admin', 'create']">Создать</a>
+        </li>
+        <!-- <li routerLinkActive="active">
+          <a [routerLink]="['/admin', 'orders']">Заказы</a>
+        </li> -->
+        <!-- <li routerLinkActive="active">
+          <a [routerLink]="['/admin', 'edit']">Редактировать</a>
+        </li> -->
+        <li routerLinkActive="active">
+          <a (click)="logout($event)">Выйти</a>
+        </li>
+      </ul>
+
+      <ng-template #login>
+        <ul>
+          <li routerLinkActive="active">
+            <a [routerLink]="['/admin', 'login']">Войти</a>
+          </li>
+        </ul>
+      </ng-template>
+    </div>
+  </div>
+  <div class="admin-main container__main">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="footer container__footer">
+    <div class="footer-info footer__footer-info">
+      <span>@ One Lab Marketplace</span>
+    </div>
+    <div class="suggestions footer__suggestions">
+      <span class="suggestions__text">
+        Мы в социальных сетях:
+      </span>
+    </div>
+    <!-- <button class="footer-btn">Написать</button> -->
+    <div class="socials">
+        <img src="assets/one-lab-insta-icon.jpg" alt="">
+        <img src="assets/one-lab-fb-icon.jpg" alt="">
+        <img src="assets/one-lab-li-icon.jpg" alt="">
+    </div>
+  </div>
+</div>

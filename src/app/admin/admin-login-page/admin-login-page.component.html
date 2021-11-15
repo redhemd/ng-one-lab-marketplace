@@ -1,0 +1,42 @@
+<form
+  class="admin-login-form"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+>
+  <div class="form-control">
+    <h2>Пожалуйста, заполните все поля</h2>
+    <label for="email"></label>
+    <input type="email" formControlName="email" id="email" placeholder="Email">
+
+    <div
+      class="validation"
+      *ngIf="form.get('email').touched && form.get('email').invalid"
+    >
+      <small *ngIf="form.get('email').errors.required">Пожалуйста, введите Ваш email.</small>
+      <small *ngIf="form.get('email').errors.email">Пожалуйста, введите актуальный email.</small>
+    </div>
+
+    <label for="password"></label>
+    <input type="password" formControlName="password" id="password" placeholder="Пароль">
+
+    <div
+      class="validation"
+      *ngIf="form.get('password').touched && form.get('password').invalid"
+    >
+      <small *ngIf="form.get('password').errors.required">Пожалуйста, введите Ваш пароль.</small>
+      <small *ngIf="form.get('password').errors.minlength">
+        Пароль должен состоять как минимум из
+        {{ form.get("password").errors.minlength.requiredLength }} знаков. Сейчас в нем
+        {{ form.get("password").errors.minlength.actualLength }} знака.
+      </small>
+    </div>
+  </div>
+
+  <button
+    class="btn"
+    type="submit"
+    [disabled]="form.invalid || submitted"
+  >
+    Войти
+  </button>
+</form>

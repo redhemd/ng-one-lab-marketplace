@@ -1,0 +1,15 @@
+.small-banner-one {
+  grid-area: small-banner-one;
+  background-image: linear-gradient(to right, rgb(250, 204, 204), rgb(191, 242, 255));
+  display: flex;
+
+  &__text {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 35px;
+  }
+
+  &__text-percent {
+    color: $orange;
+  }
+}

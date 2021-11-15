@@ -1,0 +1,19 @@
+.header {
+  grid-area: header;
+  display: grid;
+  grid-column: 1/5;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 4px;
+  grid-template-areas: 'logo search-bar search-bar user';
+
+  &__logo {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  &__search-bar {
+    width: 300px;
+  }
+}

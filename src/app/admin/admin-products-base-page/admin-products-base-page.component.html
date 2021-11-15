@@ -1,0 +1,72 @@
+<div
+  *ngIf="products.length; else loading"
+  class="admin-products-base-page">
+  <h2>Все товары</h2>
+
+  <form class="admin-search-bar header__search-bar">
+    <button>
+      <input
+        type="text"
+        autocomplete="off"
+        placeholder="Поиск"
+        [(ngModel)]="productName"
+        [ngModelOptions]="{standalone:true}"
+      >
+    </button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Фото</th>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Создан</th>
+        <th>Открыть</th>
+        <th>Удалить</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="
+        let product of products | adminSearch: productName;
+        let idx = index
+        "
+      >
+        <td>
+          <quill-view [content]="product.img"></quill-view>
+        </td>
+        <td class="admin-products-title">
+          {{product.title}}
+        </td>
+        <td>{{product.price}}</td>
+        <td>{{product.date | date: 'dd.MM.yyyy'}}</td>
+        <td class="td-btn">
+          <button
+            class="
+            admin-products-btn
+            admin-products-btn__open"
+            [routerLink]="['/admin', 'product', product.id, 'edit']"
+          >
+            Открыть
+          </button>
+        </td>
+        <td class="td-btn">
+          <button
+            class="
+            admin-products-btn
+            admin-products-btn__delete"
+            (click)="delete(product.id)"
+          >
+            Удалить
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #loading>
+  Loading...
+</ng-template>

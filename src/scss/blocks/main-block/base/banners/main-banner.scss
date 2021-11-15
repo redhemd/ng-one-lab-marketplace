@@ -1,0 +1,40 @@
+.main-banner {
+  grid-area: main-banner;
+  background-image: linear-gradient(to right, rgb(247, 226, 226), rgb(148, 234, 255));
+  display: flex;
+
+  & .banner-block {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 50px 0 50px;
+
+    &__title {
+      font-size: 52px;
+      font-weight: 600;
+    }
+
+    &__text {
+      font-size: 20px;
+      font-weight: 500;
+      color: $gray;
+      margin-top: 10px;
+    }
+
+    &__btn {
+      background-color: $orange;
+      color: $white;
+      font-size: 24px;
+      border-radius: 20px;
+      border: none;
+      margin-top: 20px;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 350px;
+    height: 350px;
+    margin: 0 50px 0 10px;
+  }
+}

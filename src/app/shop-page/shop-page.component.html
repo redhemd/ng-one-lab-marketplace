@@ -1,0 +1,121 @@
+<div class="shop-grid">
+<div class="categories main__categories">
+    <h2>Категории</h2>
+
+    <ul>
+      <li [ngClass]="{
+            isActive: activeToggleAll
+          }">
+        <a
+          class="category__item"
+          (click)="setType('all')"
+        >Все товары</a>
+      </li>
+
+      <li [ngClass]="{
+            isActive: activeTogglePhones
+          }">
+        <a
+          class="category__item"
+          (click)="setType('phones-headphones')"
+        >Смартфоны и наушники</a>
+      </li>
+
+      <li [ngClass]="{
+            isActive: activeToggleLaptops
+          }">
+        <a
+          class="category__item"
+          (click)="setType('laptops-computers')"
+        >Ноутбуки и компьютеры</a>
+      </li>
+
+      <li [ngClass]="{
+            isActive: activeToggleAppliances
+          }">
+        <a
+          class="category__item"
+          (click)="setType('appliances')"
+        >Бытовая техника</a>
+      </li>
+
+      <li [ngClass]="{
+            isActive: activeToggleTvs
+          }">
+        <a
+          class="category__item"
+          (click)="setType('tv-cameras')"
+        >ТВ и фотоаппараты</a>
+      </li>
+
+      <li [ngClass]="{
+            isActive: activeToggleClothes
+          }">
+        <a
+          class="category__item"
+          (click)="setType('clothes')"
+        >Одежда</a>
+      </li>
+
+      <li [ngClass]="{
+            isActive: activeToggleToys
+          }">
+        <a
+          class="category__item"
+          (click)="setType('toys')"
+        >Игрушки</a>
+      </li>
+
+      <li [ngClass]="{
+            isActive: activeToggleSports
+          }">
+        <a
+          class="category__item"
+          (click)="setType('sport-goods')"
+        >Спортивные товары</a>
+      </li>
+
+      <li [ngClass]="{
+            isActive: activeToggleTools
+          }">
+        <a
+          class="category__item"
+          (click)="setType('tools')"
+        >Строительство и ремонт</a>
+      </li>
+    </ul>
+</div>
+<div class="base">
+  <div class="banners">
+        <div class="main-banner">
+          <div class="banner-block">
+            <span class="banner-block__title">BIG SALE!</span>
+            <span class="banner-block__text">Wireless headphones with noise canceling</span>
+            <button
+              class="banner-block__btn"
+              (click)="setType('phones-headphones')"
+            >Headphones</button>
+          </div>
+          <img src="./assets/banner-1.png" alt="">
+        </div>
+        <div class="small-banner-one">
+          <span class="small-banner-one__text">Get up to <span class="small-banner-one__text-percent">20%</span> OFF Headphones</span>
+        </div>
+        <div class="small-banner-two">
+          <div class="small-banner-two__block">
+            <span class="small-banner-two__block__title">Fujifilm Instax 11</span>
+            <button
+              class="small-banner-two__block__btn"
+              (click)="setType('tv-cameras')"
+            >Shop now</button>
+          </div>
+          <img src="./assets/small-banner-2.png" alt="">
+        </div>
+  </div>
+
+  <div class="shop-cards">
+    <app-product
+      [productName]="productName"
+    ></app-product>
+  </div>
+</div>

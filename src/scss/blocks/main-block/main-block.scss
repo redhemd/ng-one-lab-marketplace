@@ -1,0 +1,16 @@
+.main {
+  grid-area: main;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+      'categories base base base'
+      'categories base base base'
+      'categories base base base';
+
+  &__categories {
+    margin-right: 25px;
+  }
+}

@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
+@import './scss/layout.scss';
+@import './scss/vars.scss';
+@import './scss/mixins.scss';
+// ================================================================
+@import './scss/blocks/header-block/header.scss';
+@import './scss/blocks/header-block/logo.scss';
+@import './scss/blocks/header-block/search-bar.scss';
+@import './scss/blocks/header-block/user/user.scss';
+@import './scss/blocks/header-block/user/guest.scss';
+@import './scss/blocks/header-block/user/admin.scss';
+// ================================================================
+@import './scss/blocks/main-block/main-block.scss';
+@import './scss/blocks/main-block/categories/categories.scss';
+@import './scss/blocks/main-block/base/base.scss';
+@import './scss/blocks/main-block/base/banners/banners.scss';
+@import './scss/blocks/main-block/base/banners/main-banner.scss';
+@import './scss/blocks/main-block/base/banners/small-banner-one.scss';
+@import './scss/blocks/main-block/base/banners/small-banner-two.scss';
+// ================================================================
+@import './scss/blocks/main-block/base/cards/cards.scss';
+@import './scss/blocks/main-block/base/cards/product.scss';
+// ================================================================
+@import './scss/blocks/footer-block/footer.scss';
+@import './scss/blocks/footer-block/footer-info.scss';
+@import './scss/blocks/footer-block/suggestions.scss';
+@import './scss/blocks/footer-block/socials.scss';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr auto;
+  grid-template-areas:
+    'header header header header'
+    'main main main main'
+    'main main main main'
+    'footer footer footer footer';
+  overflow: hidden;
+  min-height: 100vh;
+
+  &__header {
+    margin-top: 25px;
+    margin-left: 5px;
+  }
+
+  &__main {
+    margin-top: 25px;
+  }
+
+  &__footer {
+    padding: 20px 0;
+  }
+}

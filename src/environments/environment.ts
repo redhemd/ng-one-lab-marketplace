@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiKey: 'AIzaSyCFwMUeJI1M0UTaL8tSicnjVl6QlJOK7lU',
+  databaseURL: 'https://ng-one-lab-marketplace-default-rtdb.europe-west1.firebasedatabase.app/',
 };
 
 /*
