@@ -1,0 +1,103 @@
+.admin-products-base-page {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  // max-width: 1000px;
+  max-width: 100%;
+  margin: 10px auto;
+
+  & h2 {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+  }
+
+  .admin-search-bar {
+    width: 100%;
+    height: 40px;
+    background: #f2f2f3;
+    border-radius: 8px;
+    margin: 25px 0;
+
+    & button {
+      border: none;
+      width: 100%;
+      height: 100%;
+      background: url('../../../assets/search-logo.jpg') 20px no-repeat;
+      cursor: pointer;
+      background-size: 20px 20px;
+    }
+
+    & input {
+      font-size: 20px;
+      line-height: 28px;
+      color: #888b94;
+      background-color: #f2f2f3;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      width: 90%;
+      left: 25px;
+      height: 97%;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+
+      ::ng-deep {
+
+        .ql-container.ngx-quill-view {
+          border: 0;
+          height: 78px;
+          width: 78px;
+        }
+
+        p {
+          img {
+            cursor: pointer;
+            object-fit: contain;
+            height: 50px;
+          }
+        }
+      }
+
+
+    }
+
+    th {
+      background: #888b94;
+      color: white;
+      height: 20px;
+    }
+  }
+
+  .td-btn {
+    width: 10px;
+
+    .admin-products-btn {
+      display: inline-block;
+      color: white;
+      padding: 10px 15px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      border-radius: 8px;
+
+      &__open {
+        background: #2a81dd;
+      }
+
+      &__delete {
+        background: #f33;
+      }
+    }
+  }
+}

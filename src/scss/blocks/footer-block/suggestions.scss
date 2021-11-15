@@ -1,0 +1,13 @@
+.suggestions {
+  grid-area: suggestions;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: $white;
+
+  &__text:hover {
+    color: $blue-primary;
+  }
+}

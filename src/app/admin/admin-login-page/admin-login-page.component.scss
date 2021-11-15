@@ -1,0 +1,59 @@
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  max-width: 500px;
+  margin: 100px auto;
+}
+
+.form-control {
+  display: block;
+  margin-bottom: 0.8rem;
+  display: flex;
+  flex-direction: column;
+
+  & h2 {
+    display: flex;
+    align-self: center;
+    margin-bottom: 20px;
+  }
+
+  .validation {
+    color: red;
+    margin-top: -12px;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    margin: 15px 0;
+  }
+
+  input[type="submit"],
+  button {
+    font: inherit;
+  }
+}
+
+.btn {
+  display: inline-block;
+  background: red;
+  color: white;
+  padding: 1rem 1.3rem;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  border-radius: 8px;
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--light-color);
+    color: #111;
+  }
+}

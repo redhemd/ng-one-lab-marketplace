@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="header container__header">
+    <div class="logo header__logo">
+      One Lab Marketplace
+    </div>
+
+    <form class="search-bar header__search-bar">
+      <button>
+        <input
+          type="text"
+          autocomplete="off"
+          placeholder="Поиск"
+          [(ngModel)]="productName"
+          [ngModelOptions]="{standalone: true}"
+        >
+      </button>
+    </form>
+
+    <div class="user">
+      <button class="guest user__guest">
+        <span class="guest__text">
+          <span class="guest__text__name">Гость</span>
+          <span class="guest__text__points">2500 $</span>
+        </span>
+      </button>
+      <button routerLink="/admin" class="admin user__admin">
+        <span
+          class="admin__text"
+          (click)="goToAdmin()"
+        >Админ</span>
+      </button>
+    </div>
+  </div>
+  <div class="shop-main container__main">
+    <app-shop-page
+      [productName]="productName"
+    ></app-shop-page>
+  </div>
+  <div class="footer container__footer">
+    <div class="footer-info footer__footer-info">
+      <span>@ One Lab Marketplace</span>
+    </div>
+    <div class="suggestions footer__suggestions">
+      <span class="suggestions__text">
+        Мы в социальных сетях:
+      </span>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/therealonetech/?hl=ru">
+        <img src="assets/one-lab-insta-icon.jpg">
+      </a>
+      <a href="https://www.facebook.com/therealonetech">
+        <img src="assets/one-lab-fb-icon.jpg" alt="">
+      </a>
+      <a href="https://www.linkedin.com/company/onekz/">
+        <img src="assets/one-lab-li-icon.jpg" alt="">
+      </a>
+    </div>
+  </div>
+</div>

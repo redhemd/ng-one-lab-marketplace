@@ -1,0 +1,18 @@
+.user {
+  grid-area: user;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "guest admin";
+
+  &__guest {
+    height: 44.5px;
+  }
+
+  &__admin {
+    height: 44.5px;
+  }
+}

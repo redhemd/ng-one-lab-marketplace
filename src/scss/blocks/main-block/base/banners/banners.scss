@@ -1,0 +1,10 @@
+.banners {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "main-banner main-banner small-banner-one"
+    "main-banner main-banner small-banner-two";
+}

@@ -1,0 +1,32 @@
+<div
+  *ngIf="products$ | async as products; else loading"
+  class="cards-grid"
+>
+  <div
+    *ngFor="let product of products | search: productName | sort: productService.type"
+    class="product"
+    data-id="0"
+  >
+    <quill-view [content]="product.img"></quill-view>
+    <span
+      *ngIf="product.isNew"
+      class="product__card-new"
+    >NEW</span>
+    <div class="product__card-info">
+      <span class="product__card-info__points">{{ product.price}} $</span>
+      <span class="product__card-info__descr">{{ product.title }}</span>
+      <button
+        class="product__card-info__btn"
+        (click)="modal.openModal(product)"
+      >Заказать</button>
+    </div>
+    <app-modal
+      #modal
+      [isOpen]="isShownModal"
+    ></app-modal>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

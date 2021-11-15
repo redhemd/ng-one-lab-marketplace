@@ -1,0 +1,25 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+
+  ::ng-deep {
+
+    .ql-container.ngx-quill-view {
+      border: 0;
+      height: 300px;
+    }
+
+    p {
+      img {
+        cursor: pointer;
+        object-fit: contain;
+        height: 270px;
+      }
+    }
+  }
+}
+
+.selected-movie {
+  cursor: pointer;
+}

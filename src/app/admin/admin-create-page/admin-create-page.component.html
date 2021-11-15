@@ -1,0 +1,118 @@
+<form
+  class="admin-create-form"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+>
+  <h2>Создать товар</h2>
+
+  <div class="form-control">
+    <label for="type">Категория товара</label>
+    <select formControlName="type">
+      <!-- <option value="all">Все товары</option> -->
+      <option value="phones-headphones">Смартфоны и наушники</option>
+      <option value="laptops-computers">Ноутбуки и компьютеры</option>
+      <option value="appliances">Бытовая техника</option>
+      <option value="tv-cameras">ТВ и фотоаппараты</option>
+      <option value="clothes">Одежда</option>
+      <option value="toys">Игрушки</option>
+      <option value="sport-goods">Спортивные товары</option>
+      <option value="tools">Строительство и ремонт</option>
+    </select>
+
+    <div
+      class="validation"
+      *ngIf="form.get('type').touched && form.get('type').invalid"
+    >
+      <small
+        *ngIf="form.get('type').errors.required"
+      >Пожалуйста, выберите категорию товара</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="title">Название товара</label>
+    <input type="text" id="title" formControlName="title">
+
+    <div
+      class="validation"
+      *ngIf="form.get('title').touched && form.get('title').invalid"
+    >
+      <small
+        *ngIf="form.get('title').errors.required"
+      >
+        Пожалуйста, введите название товара
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="info">Описание товара</label>
+    <quill-editor formControlName="info"></quill-editor>
+
+    <div
+      class="validation-for-quill"
+      *ngIf="form.get('info').touched && form.get('info').invalid"
+    >
+      <small
+        *ngIf="form.get('info').errors.required"
+      >
+        Пожалуйста, введите описание товара
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="img">Фотография</label>
+    <quill-editor formControlName="img"></quill-editor>
+
+    <div
+      class="validation-for-quill"
+      *ngIf="form.get('img').touched && form.get('img').invalid"
+    >
+      <small
+        *ngIf="form.get('img').errors.required"
+      >
+        Пожалуйста, загрузите фотографию товара
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="isNew">Товар новый?</label>
+    <select formControlName="isNew">
+      <option [ngValue]="true">Да</option>
+      <option [ngValue]="false">Нет</option>
+    </select>
+
+    <div
+      class="validation"
+      *ngIf="form.get('isNew').touched && form.get('isNew').invalid"
+    >
+      <small
+        *ngIf="form.get('isNew').errors.required"
+      >Пожалуйста, выберите тип товара</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="price">Стоимость товара</label>
+    <input type="number" formControlName="price" id="price">
+
+    <div
+      class="validation"
+      *ngIf="form.get('price').touched && form.get('price').invalid"
+    >
+      <small *ngIf="form.get('price').errors.required"
+        >Пожалуйста, введите стоимость товара</small
+      >
+    </div>
+  </div>
+
+  <button
+    class="btn"
+    type="submit"
+    [disabled]="form.invalid || submitBool"
+  >
+    Создать товар
+  </button>
+</form>
